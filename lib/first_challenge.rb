@@ -1,3 +1,5 @@
+require 'pry'
+
 def first_challenge
   contacts = {
     "Jon Snow" => {
@@ -12,11 +14,19 @@ def first_challenge
       favorite_icecream_flavors: ["strawberry", "cookie dough", "mint chip"]
     }
   }
-
-  #your code here
-
-
-  #remember to return your newly altered contacts hash!
   contacts
 end
+binding.pry
+  contacts["Freddy Mercury"][:favorite_icecream_flavors]
+
+  if contacts["Freddy Mercury"][:favorite_icecream_flavors] == "strawberry"
+    value.each do |flavor|
+      value.delete_if == "strawberry"
+
+      # here, each index element in an ice cream flavor string
+      puts "#{flavor}"
+    end
+  end
+
+  #remember to return your newly altered contacts hash!
 

@@ -14,19 +14,16 @@ def first_challenge
       favorite_icecream_flavors: ["strawberry", "cookie dough", "mint chip"]
     }
   }
-  contacts
-end
-binding.pry
-  contacts["Freddy Mercury"][:favorite_icecream_flavors]
 
-  if contacts["Freddy Mercury"][:favorite_icecream_flavors] == "strawberry"
-    value.each do |flavor|
-      value.delete_if == "strawberry"
-
-      # here, each index element in an ice cream flavor string
-      puts "#{flavor}"
+  contacts.each do |name, info|
+    info.each do |category, details|
+      if category == :favorite_icecream_flavors
+        details.delete_if {|type| type == "strawberry"}
+      end
     end
   end
+  return contacts
+end
 
   #remember to return your newly altered contacts hash!
 
